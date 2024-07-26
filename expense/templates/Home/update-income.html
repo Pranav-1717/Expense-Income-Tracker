@@ -1,0 +1,17 @@
+{% extends 'expense/base.html' %}
+
+{% load static %}
+{% block content %}
+    <h2>Update</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for fm in form %}
+        <div class="edit mt-4">
+            {{fm.label_tag}} 
+            <div class="update" style="width: 70%;">{{fm}}</div>
+            {% endfor %}
+        </div>
+        <input type="submit" value="Save" class="btn btn-primary mt-3">
+        <a href="{% url 'myincome' %}"><button type="button" class="btn btn-secondary mt-3" style="margin-left: 1rem;">Back</button></a>
+    </form>
+{% endblock %}

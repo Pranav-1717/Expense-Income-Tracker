@@ -1,0 +1,13 @@
+{% extends 'expense/base.html' %}
+
+{% load static %}
+{% block content %}
+    <!-- <h2>Expense Summary</h2>
+    <div class="canvas" style="height: 500px; width: 500px; margin-top:3rem;">
+        <canvas id="myChart" style="height: 400px; width: 400px;"></canvas>
+    </div> -->
+    <h2>Monthly Category-wise Expenses</h2>
+    <canvas id="monthlyCategoryExpensesChart" width="400" height="200"></canvas>
+
+    <script src="{% static 'expense/js/expense.js' %}"></script>
+{% endblock %}

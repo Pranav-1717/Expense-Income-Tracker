@@ -1,0 +1,9 @@
+{% extends 'expense/base.html' %}
+
+{% load static %}
+{% block content %}
+    <h2>Monthly Category-wise Income</h2>
+    <canvas id="IncomeChart" width="400" height="200"></canvas>
+
+    <script src="{% static 'expense/js/incomechart.js' %}"></script>
+{% endblock %}

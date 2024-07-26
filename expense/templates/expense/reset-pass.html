@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset</title>
+    <link rel="stylesheet" href="{% static 'expense/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'expense/css/login.css' %}">
+</head>
+<body>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card bg-white text-dark" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+      
+                  <div class="mb-md-2 mt-md-2 pb-2">
+      
+                    <p class="text-dark-50 mb-5">Please enter your email and username</p>
+    
+                    <form action="" method="post" novalidate>
+                      {% csrf_token %}
+                      {% for fm in form %}
+                          <div data-mdb-input-init class="form-outline form-dark mb-4">
+                            {{fm}}
+                            <label class="form-label" for="typeEmailX">{{fm.label_tag}}</label>
+                            <small class="text-warning ">{{fm.errors|striptags}}</small><br>
+                          </div>
+                      {% endfor %}
+
+                      {% if messages %}
+                      {% for message in messages %}
+                        <p {% if message.tags %} class="alert alert-danger" {% endif %}>{{message}}</p>
+                      {% endfor %}
+                      {% endif %}
+                     
+                      <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-dark btn-lg px-5" type="submit">Next</button>
+
+                      {% if form.non_field_errors %}
+                      {% for error in form.non_field_errors %}
+                      <div class="error-message">
+                        <p class="alert alert-danger my-3">{{error}}</p>
+                      </div>
+                      {% endfor %}
+                      {% endif %}
+                    </form>
+          
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script src="{% static 'expense/js/bootstrap.js' %}"></script>
+      <script src="{% static 'expense/js/jquery.js' %}"></script>
+      <script src="{% static 'expense/js/popper.js' %}"></script>
+      <script src="{% static 'expense/js/script.js' %}"></script>
+</body>
+</html>

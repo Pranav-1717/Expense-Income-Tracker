@@ -1,0 +1,23 @@
+{% extends 'expense/base.html' %}
+
+{% load static %}
+{% block content %}
+    <h2>General Settings</h2>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="input-group mt-3">
+        <select class="form-select" id="inputGroupSelect04" name="currency" aria-label="Example select with button addon">
+          {% if preference and preference.currency %}
+          <option  selected>{{ preference.currency }}</option>
+          {% else %}
+            <option selected>Choose a currency</option>
+          {% endif %}
+          {% for key, value in currencies.items %}
+            <option >{{ key }} - {{ value }}</option>
+          {% endfor %}
+        </select>
+        <input class="btn btn-outline-secondary" type="submit" value="Save">
+      </div>
+    </form>
+
+{% endblock %}

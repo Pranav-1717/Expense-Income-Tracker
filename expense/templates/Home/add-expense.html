@@ -1,0 +1,24 @@
+{% extends 'expense/base.html' %}
+
+{% load static %}
+{% block content %}
+    <h2>Add Expense</h2>
+    <form action="" method="post" >
+        {% csrf_token %}
+        {% for fm in form %}
+        <div class="edit mt-4">
+            {{fm.label_tag}} 
+            <div class="update" style="width: 70%;">{{fm}}</div>
+            <!-- <small class="text-warning ">{{fm.errors|striptags}}</small><br> -->
+            {% endfor %}
+        </div>
+        <input type="submit" value="Add" class="btn btn-primary mt-3">
+        <a href="{% url 'dashboard' %}"><button type="button" class="btn btn-secondary mt-3" style="margin-left: 1rem;">Back</button></a>
+      
+        <!-- {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <p class="alert alert-danger my-3">{{error}}</p>
+        {% endfor %}
+        {% endif %} -->
+    </form>
+{% endblock %}

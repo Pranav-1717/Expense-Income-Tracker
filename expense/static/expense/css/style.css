@@ -1,0 +1,42 @@
+.bd-placeholder-img {
+  /* color: white; */
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; 
+}
+.bd-placeholder-img::placeholder {
+  color: #aaa; /* Change this to your desired color */
+}
+
+.bd-placeholder-img::-webkit-input-placeholder {
+  color: #aaa; /* Change this to your desired color */
+}
+
+.bd-placeholder-img::-moz-placeholder {
+  color: #aaa; /* Change this to your desired color */
+}
+
+.bd-placeholder-img:-ms-input-placeholder {
+  color: #aaa; /* Change this to your desired color */
+}
+
+.bd-placeholder-img::-ms-input-placeholder {
+  color: #aaa; /* Change this to your desired color */
+}
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.passtoggle{
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+
